@@ -12,3 +12,4 @@ The primary finding is that SSH access to 192.168.217.129 was blocked during hos
 Analysis: The SSH client and server could not agree on a host key algorithm. Both ssh-rsa (the legacy SHA-1 signature scheme) and ssh-dss (DSA) are legacy algorithms, and modern clients commonly disable them by default.
 Result: The connection failed before the screenshot could establish whether the credentials were valid.
 Solution ssh -o HostKeyAlgorithms=+ssh-rsa \msfadmin@192.168.217.129 was used before the LHOST can communicate with the RHOST
+Check that the target IP address is correct, both systems are connected to the intended virtual network, and the relevant network interfaces and routes are configured properly.
